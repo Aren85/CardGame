@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,7 +139,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: upg_spear_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 88
+        width: 430
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b199319b2ffb2ab4ba64ec354ef0afbd
+      internalID: 1860068382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -150,7 +171,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      upg_spear_0: -1397432068
+      upg_spear_1: 1860068382
+      upg_spear_10: 269462914
+      upg_spear_11: 477961318
+      upg_spear_12: 1749064994
+      upg_spear_13: 1678262510
+      upg_spear_14: 715845454
+      upg_spear_2: -1284448958
+      upg_spear_3: -1917038450
+      upg_spear_4: 1916421730
+      upg_spear_5: -729200813
+      upg_spear_6: 261310114
+      upg_spear_7: -273801109
+      upg_spear_8: 2052596494
+      upg_spear_9: -1822318741
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
