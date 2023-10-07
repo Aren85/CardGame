@@ -11,7 +11,7 @@ public class CardScriptableObject : ScriptableObject
     public string cardName;     // 卡牌的名稱
     [TextArea]
     [Header("卡牌描述設定")]
-    public string description;  // 卡牌的描述
+    public string cardDescription;  // 卡牌的描述
     [Header("卡牌圖案設定")]
     public Sprite cardImage;    // 卡牌的圖像
 

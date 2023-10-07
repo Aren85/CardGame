@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12c7e9dc2d0a1124f946674936cb3d73, type: 3}
-  m_Name: ATTACK
+  m_Name: health
   m_EditorClassIdentifier: 
-  cardName: "\u75DB\u64CA"
-  cardDescription: "\u9020\u62103\u9EDE\u50B7\u5BB3"
-  cardImage: {fileID: 21300000, guid: c2809af139b449442845236b304bd01f, type: 3}
+  cardName: "\u6CBB\u7642"
+  cardDescription: "\u6062\u5FA95\u9EDE\u751F\u547D"
+  cardImage: {fileID: 21300000, guid: 397a7030fb5256c49be45e0892971fe7, type: 3}
   cardSuit: 0
   heartsSprite: {fileID: -920523774, guid: 2d36c5f10ff3f4b479a54b1e0b79f270, type: 3}
   diamondsSprite: {fileID: -1626407619, guid: 2d36c5f10ff3f4b479a54b1e0b79f270, type: 3}
   clubsSprite: {fileID: 194669290, guid: 2d36c5f10ff3f4b479a54b1e0b79f270, type: 3}
   spadesSprite: {fileID: 1853383761, guid: 2d36c5f10ff3f4b479a54b1e0b79f270, type: 3}
-  cardRank: 1
-  cardType: 0
+  cardRank: 12
+  cardType: 1

@@ -10,13 +10,14 @@ public class Card : MonoBehaviour
 
     public string cardName;
     public string cardType;
+    public string cardDescription;
     public string cardRank;
     public string cardSuit;
     public Image cardSuitSprite;
+    public Image cardGraphicSprite;
 
 
-
-    public TMP_Text cardTypeText, cardNameText, cardRankText;
+    public TMP_Text cardTypeText, cardNameText, cardRankText, cardDescirptionText;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +31,14 @@ public class Card : MonoBehaviour
         cardRank = cardSO.cardRank.ToString();
         cardSuit = cardSO.cardSuit.ToString();
 
+        cardDescription = cardSO.cardDescription.ToString();
+
         cardNameText.text = cardName;
         cardTypeText.text = cardType;
         cardRankText.text = cardRank;
+        cardDescirptionText.text = cardDescription;
         cardSuitSprite.sprite = cardSO.GetCardSuitSprite();
+        cardGraphicSprite.sprite = cardSO.cardImage;
     }
 
 
