@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: New Card
   m_EditorClassIdentifier: 
   cardName: 
-  description: 
+  description: "\u6211\u53EF\u4EE5\u8F38\u5165\u4E2D\u6587\u55CE"
   cardImage: {fileID: 0}
-  suit: 0
-  cardValue: 1
+  cardSuit: 1
+  Hearts: {fileID: 0}
+  Diamonds: {fileID: 0}
+  Clubs: {fileID: 0}
+  Spades: {fileID: 0}
+  cardRank: 1
+  cardType: 0

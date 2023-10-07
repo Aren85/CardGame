@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c7e9dc2d0a1124f946674936cb3d73, type: 3}
+  m_Name: ATTACK
+  m_EditorClassIdentifier: 
+  cardName: "\u75DB\u64CA"
+  description: "\u9020\u62103\u9EDE\u50B7\u5BB3"
+  cardImage: {fileID: 21300000, guid: c2809af139b449442845236b304bd01f, type: 3}
+  cardSuit: 0
+  heartsSprite: {fileID: -920523774, guid: 2d36c5f10ff3f4b479a54b1e0b79f270, type: 3}
+  diamondsSprite: {fileID: -1626407619, guid: 2d36c5f10ff3f4b479a54b1e0b79f270, type: 3}
+  clubsSprite: {fileID: 194669290, guid: 2d36c5f10ff3f4b479a54b1e0b79f270, type: 3}
+  spadesSprite: {fileID: 1853383761, guid: 2d36c5f10ff3f4b479a54b1e0b79f270, type: 3}
+  cardRank: 1
+  cardType: 0

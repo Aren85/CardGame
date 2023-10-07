@@ -1,41 +1,46 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
-
-[CreateAssetMenu(fileName = "New Card", menuName = "Custom/Card")]
-public class Card : ScriptableObject
+public class Card : MonoBehaviour
 {
-    public string cardName;     // 卡牌的名稱
-    public string description;  // 卡牌的描述
-    public Sprite cardImage;    // 卡牌的圖像
-    public CardSuit suit;       // 使用CardSuite枚举来花色
-    public CardValue cardValue; // 使用CardValue枚举来存储点数
+    public CardScriptableObject cardSO;
 
-    public enum CardSuit
+    public string cardName;
+    public string cardType;
+    public string cardRank;
+    public string cardSuit;
+    public Image cardSuitSprite;
+
+
+
+    public TMP_Text cardTypeText, cardNameText, cardRankText;
+    // Start is called before the first frame update
+    void Start()
     {
-        Hearts,
-        Diamonds,
-        Clubs,
-        Spades
+        SetupCard();
     }
 
-    public enum CardValue
+    public void SetupCard()
     {
-        Ace = 1,
-        Two,
-        Three,
-        Four,
-        Five,
-        Six,
-        Seven,
-        Eight,
-        Nine,
-        Ten,
-        Jack,
-        Queen,
-        King
+        cardName = cardSO.cardName.ToString();
+        cardType = cardSO.cardType.ToString();
+        cardRank = cardSO.cardRank.ToString();
+        cardSuit = cardSO.cardSuit.ToString();
+
+        cardNameText.text = cardName;
+        cardTypeText.text = cardType;
+        cardRankText.text = cardRank;
+        cardSuitSprite.sprite = cardSO.GetCardSuitSprite();
     }
 
 
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }
