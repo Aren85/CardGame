@@ -20,5 +20,5 @@ MonoBehaviour:
   diamondsSprite: {fileID: -1626407619, guid: 2d36c5f10ff3f4b479a54b1e0b79f270, type: 3}
   clubsSprite: {fileID: 194669290, guid: 2d36c5f10ff3f4b479a54b1e0b79f270, type: 3}
   spadesSprite: {fileID: 1853383761, guid: 2d36c5f10ff3f4b479a54b1e0b79f270, type: 3}
-  cardRank: 12
+  cardRank: 3
   cardType: 1

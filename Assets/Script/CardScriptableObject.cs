@@ -27,7 +27,9 @@ public class CardScriptableObject : ScriptableObject
     public CardRank cardRank; // 使用CardValue枚举来存储点数
     [Header("卡牌類型設定")]
     public CardType cardType;
-    
+
+
+
 
     public enum CardType
     {
@@ -76,4 +78,5 @@ public class CardScriptableObject : ScriptableObject
                 return null; // 如果没有匹配的花色，返回空
         }
     }
+
 }
