@@ -32,7 +32,13 @@ public class HandController : MonoBehaviour
         {
             cardPositions.Add(minPos.position + (distanceBetweenPoints * i));
 
-            heldCards[i].transform.position = cardPositions[i];
+            //heldCards[i].transform.position = cardPositions[i];
+
+
+
+            heldCards[i].MoveToPoint(cardPositions[i]);//卡牌移動到對應位置
+            heldCards[i].inHand = true;
+            heldCards[i].handPosttion = i;
         }
     }
 }

@@ -878,7 +878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8341144}
   m_AnchorMax: {x: 0.24934751, y: 1}
-  m_AnchoredPosition: {x: -0.1111145, y: -0.013122559}
+  m_AnchoredPosition: {x: -0.11114502, y: -0.013122559}
   m_SizeDelta: {x: 0.22659588, y: 0.47734356}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &106667614
@@ -1388,6 +1388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 186830756}
   - component: {fileID: 186830755}
+  - component: {fileID: 186830757}
   m_Layer: 0
   m_Name: Card (7)
   m_TagString: Untagged
@@ -1415,6 +1416,9 @@ MonoBehaviour:
   cardSuit: 
   cardSuitSprite: {fileID: 818665575}
   cardGraphicSprite: {fileID: 2008638548}
+  moveSpeed: 3
+  inHand: 0
+  handPosttion: 0
   cardTypeText: {fileID: 1586716615}
   cardNameText: {fileID: 841293551}
   cardRankText: {fileID: 337829401}
@@ -1436,6 +1440,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &186830757
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186830754}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &188221394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2698,6 +2728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 310245748}
   - component: {fileID: 310245747}
+  - component: {fileID: 310245749}
   m_Layer: 0
   m_Name: Card (5)
   m_TagString: Untagged
@@ -2725,6 +2756,9 @@ MonoBehaviour:
   cardSuit: 
   cardSuitSprite: {fileID: 946765879}
   cardGraphicSprite: {fileID: 1778300009}
+  moveSpeed: 3
+  inHand: 0
+  handPosttion: 0
   cardTypeText: {fileID: 1330657337}
   cardNameText: {fileID: 1013008533}
   cardRankText: {fileID: 951116722}
@@ -2746,6 +2780,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &310245749
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310245746}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &311478512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3209,7 +3269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354710465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8, y: -3.7, z: 0}
+  m_LocalPosition: {x: -3, y: -3.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5029,7 +5089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622996604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8, y: -3.7, z: -1}
+  m_LocalPosition: {x: 3, y: -3.7, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5964,7 +6024,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.106402665}
   m_AnchorMax: {x: 1, y: 0.6931863}
-  m_AnchoredPosition: {x: 0, y: -0.46437454}
+  m_AnchoredPosition: {x: 0, y: -0.46437836}
   m_SizeDelta: {x: 0, y: -0.68990767}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &750104558
@@ -7757,6 +7817,7 @@ GameObject:
   - component: {fileID: 966035394}
   - component: {fileID: 966035393}
   - component: {fileID: 966035392}
+  - component: {fileID: 966035396}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7846,6 +7907,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!64 &966035396
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966035391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &966561378
 GameObject:
   m_ObjectHideFlags: 0
@@ -8347,6 +8422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1001642652}
   - component: {fileID: 1001642651}
+  - component: {fileID: 1001642653}
   m_Layer: 0
   m_Name: Card (1)
   m_TagString: Untagged
@@ -8374,6 +8450,9 @@ MonoBehaviour:
   cardSuit: 
   cardSuitSprite: {fileID: 1353409241}
   cardGraphicSprite: {fileID: 455593670}
+  moveSpeed: 3
+  inHand: 0
+  handPosttion: 0
   cardTypeText: {fileID: 1734700213}
   cardNameText: {fileID: 1631594109}
   cardRankText: {fileID: 1530830407}
@@ -8393,8 +8472,34 @@ Transform:
   - {fileID: 920077923}
   - {fileID: 284674323}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1001642653
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001642650}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &1013008530
 GameObject:
   m_ObjectHideFlags: 0
@@ -9351,7 +9456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.072000004, y: 0.4586894}
   m_AnchorMax: {x: 0.93, y: 0.8651839}
-  m_AnchoredPosition: {x: -0.49186707, y: 0.28672028}
+  m_AnchoredPosition: {x: -0.4919281, y: 0.2867279}
   m_SizeDelta: {x: -1.0162954, y: 0.7704942}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1259482356
@@ -9950,7 +10055,7 @@ Transform:
   - {fileID: 354710466}
   - {fileID: 622996605}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1330657334
 GameObject:
@@ -10173,7 +10278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337655086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10789,7 +10894,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 2.4929047, y: 0.008700371}
+  m_AnchoredPosition: {x: 2.49292, y: 0.008701324}
   m_SizeDelta: {x: -5.0154, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1421524427
@@ -12472,6 +12577,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1586857996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586857997}
+  m_Layer: 0
+  m_Name: Environment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1586857997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586857996}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1589590733
 GameObject:
   m_ObjectHideFlags: 0
@@ -14010,6 +14146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1751988627}
   - component: {fileID: 1751988626}
+  - component: {fileID: 1751988628}
   m_Layer: 0
   m_Name: Card (2)
   m_TagString: Untagged
@@ -14037,6 +14174,9 @@ MonoBehaviour:
   cardSuit: 
   cardSuitSprite: {fileID: 184096598}
   cardGraphicSprite: {fileID: 1973883015}
+  moveSpeed: 3
+  inHand: 0
+  handPosttion: 0
   cardTypeText: {fileID: 274027379}
   cardNameText: {fileID: 325631521}
   cardRankText: {fileID: 1809806426}
@@ -14056,8 +14196,34 @@ Transform:
   - {fileID: 1769101207}
   - {fileID: 356017258}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1751988628
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751988625}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &1769101206
 GameObject:
   m_ObjectHideFlags: 0
@@ -14274,8 +14440,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.47923136}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -60, y: -40.000008}
+  m_AnchoredPosition: {x: 0.83999634, y: 5.8833923}
+  m_SizeDelta: {x: -26.32, y: -28.233}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1777491900
 MonoBehaviour:
@@ -15137,7 +15303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.072000004, y: 0}
   m_AnchorMax: {x: 0.93000007, y: 1}
-  m_AnchoredPosition: {x: 0.008132935, y: -0.055999756}
+  m_AnchoredPosition: {x: 0.008117676, y: -0.055999756}
   m_SizeDelta: {x: -0.020020008, y: 0.017752647}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1839924020
@@ -15188,6 +15354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1858415325}
   - component: {fileID: 1858415324}
+  - component: {fileID: 1858415326}
   m_Layer: 0
   m_Name: Card (6)
   m_TagString: Untagged
@@ -15215,6 +15382,9 @@ MonoBehaviour:
   cardSuit: 
   cardSuitSprite: {fileID: 1669144125}
   cardGraphicSprite: {fileID: 1199980632}
+  moveSpeed: 3
+  inHand: 0
+  handPosttion: 0
   cardTypeText: {fileID: 979690275}
   cardNameText: {fileID: 375131357}
   cardRankText: {fileID: 1354691789}
@@ -15236,6 +15406,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1858415326
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858415323}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &1868410828
 GameObject:
   m_ObjectHideFlags: 0
@@ -15423,6 +15619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1873568248}
   - component: {fileID: 1873568247}
+  - component: {fileID: 1873568249}
   m_Layer: 0
   m_Name: Card (4)
   m_TagString: Untagged
@@ -15450,6 +15647,9 @@ MonoBehaviour:
   cardSuit: 
   cardSuitSprite: {fileID: 1097996505}
   cardGraphicSprite: {fileID: 1259482357}
+  moveSpeed: 3
+  inHand: 0
+  handPosttion: 0
   cardTypeText: {fileID: 750104559}
   cardNameText: {fileID: 162427237}
   cardRankText: {fileID: 94249617}
@@ -15471,6 +15671,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1873568249
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873568246}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &1883373578
 GameObject:
   m_ObjectHideFlags: 0
@@ -15680,8 +15906,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: -20}
+  m_AnchoredPosition: {x: -0.000015258789, y: 0.0000076293945}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1888301234
 GameObject:
@@ -16542,6 +16768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2015465958}
   - component: {fileID: 2015465957}
+  - component: {fileID: 2015465959}
   m_Layer: 0
   m_Name: Card (3)
   m_TagString: Untagged
@@ -16561,7 +16788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296a4dc0f51ec5149bdd4cc7a3ec401c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSO: {fileID: 11400000, guid: fd64cc2884c1b3c4eb9635e2af3babe8, type: 2}
+  cardSO: {fileID: 11400000, guid: 776babd04bcd8be438657782ec39a412, type: 2}
   cardName: 12345
   cardType: 1234
   cardDescription: 
@@ -16569,6 +16796,9 @@ MonoBehaviour:
   cardSuit: 
   cardSuitSprite: {fileID: 1296325126}
   cardGraphicSprite: {fileID: 1627551366}
+  moveSpeed: 3
+  inHand: 0
+  handPosttion: 0
   cardTypeText: {fileID: 1278764395}
   cardNameText: {fileID: 1556400551}
   cardRankText: {fileID: 1615062912}
@@ -16590,6 +16820,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2015465959
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015465956}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &2070351085
 GameObject:
   m_ObjectHideFlags: 0
@@ -17841,6 +18097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8410533064284353591}
   - component: {fileID: 8410533064284353592}
+  - component: {fileID: 8410533064284353593}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -17856,14 +18113,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8410533064284353588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 1.3, z: 0}
+  m_LocalPosition: {x: -1.53, y: 1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8410533064559052762}
   - {fileID: 8410533062926874337}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8410533064284353592
 MonoBehaviour:
@@ -17885,10 +18142,39 @@ MonoBehaviour:
   cardSuit: 
   cardSuitSprite: {fileID: 1276677794}
   cardGraphicSprite: {fileID: 8410533064317775396}
+  moveSpeed: 3
+  inHand: 0
+  handPosttion: 0
   cardTypeText: {fileID: 8410533064834701829}
   cardNameText: {fileID: 8410533064323151078}
   cardRankText: {fileID: 8410533063545585096}
   cardDescirptionText: {fileID: 8410533063302283182}
+--- !u!61 &8410533064284353593
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8410533064284353588}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 2}
+  m_EdgeRadius: 0
 --- !u!114 &8410533064317775396
 MonoBehaviour:
   m_ObjectHideFlags: 0

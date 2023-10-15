@@ -78,5 +78,39 @@ public class CardScriptableObject : ScriptableObject
                 return null; // 如果没有匹配的花色，返回空
         }
     }
+    public string GetCardRank()
+    {
+        switch(cardRank)
+        {
+            case CardRank.A:
+                return "A";
+            case CardRank._2:
+                return "2";
+            case CardRank._3:
+                return "3";
+            case CardRank._4:
+                return "4";
+            case CardRank._5:
+                return "5";
+            case CardRank._6:
+                return "6";
+            case CardRank._7:
+                return "7";
+            case CardRank._8:
+                return "8";
+            case CardRank._9:
+                return "9";
+            case CardRank._10:
+                return "10";
+            case CardRank.J:
+                return "j";
+            case CardRank.Q:
+                return "Q";
+            case CardRank.K:
+                return "K";
+
+            default: return null;
+        }
+    }
 
 }
