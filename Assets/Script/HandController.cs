@@ -19,11 +19,12 @@ public class HandController : MonoBehaviour
         
     }
 
+
     public void SetCardPostionsInHand()
     {
         cardPositions.Clear();
         Vector3 distanceBetweenPoints = Vector3.zero;  //點之間的距離
-        if(heldCards.Count > 1)
+        if (heldCards.Count > 1)
         {
             distanceBetweenPoints = (maxPos.position - minPos.position) / (heldCards.Count - 1);
         }
