@@ -16,7 +16,7 @@ public class CardScriptableObject : ScriptableObject
     public Sprite cardImage;    // 卡牌的圖像
 
     [Header("花色設定")]
-    public CardSuit cardSuit;       // 使用CardSuite枚举来花色
+    public CardSuit cardSuit;       // 使用CardSuite枚舉来表示花色
     
     public Sprite heartsSprite;
     public Sprite diamondsSprite;
@@ -24,7 +24,7 @@ public class CardScriptableObject : ScriptableObject
     public Sprite spadesSprite;
 
     [Header("卡牌點數設定")]
-    public CardRank cardRank; // 使用CardValue枚举来存储点数
+    public CardRank cardRank; // 使用CardValue枚舉来存储点数
     [Header("卡牌類型設定")]
     public CardType cardType;
 
