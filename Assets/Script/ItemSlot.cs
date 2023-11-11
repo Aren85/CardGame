@@ -18,7 +18,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
             // 將被拖曳物件的 RectTransform 的錨定位置設置為當前物件 RectTransform 的錨定位置。
             //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-            dragDrop.parentToReturnTo = this.transform;
+            //dragDrop.parentToReturnTo = this.transform;
             eventData.pointerDrag.GetComponent<RectTransform>().localScale = Vector2.one * 0.6f;
         }
     }
