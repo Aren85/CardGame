@@ -111,7 +111,7 @@ public class CardContainer : MonoBehaviour
     }
 
     // 設置卡片
-    void SetUpCards()
+    void SetUpCards()//這個函數的作用是確保每個子卡片都有一個 CardWrapper 組件，並且這些卡片的相關配置信息被正確地設置。
     {
         cards.Clear();
         foreach (Transform card in transform)
@@ -135,7 +135,9 @@ public class CardContainer : MonoBehaviour
     }
 
     // 如果需要，添加其他組件
-    private void AddOtherComponentsIfNeeded(CardWrapper wrapper)
+    //這個方法確保每個卡片都擁有一個 Canvas 組件，並進行了特定的配置，同時確保卡片具有 GraphicRaycaster 組件，
+    //以支持與圖形相關的射線事件。這可能是為了確保卡片在 Unity 遊戲中正確地渲染和處理事件。
+    private void AddOtherComponentsIfNeeded(CardWrapper wrapper)//
     {
         var canvas = wrapper.GetComponent<Canvas>();
         if (canvas == null)
@@ -152,6 +154,7 @@ public class CardContainer : MonoBehaviour
     }
 
     // 更新卡片
+    //這個方法是為了保持卡片的狀態和顯示是最新的，根據子物體的數量變化執行不同的初始化操作，然後更新卡片的位置、旋轉、UI 層級和渲染順序。
     private void UpdateCards()
     {
         if (transform.childCount != cards.Count)
@@ -170,8 +173,7 @@ public class CardContainer : MonoBehaviour
         UpdateCardOrder();
     }
 
-    // 設置卡片的 UI 層級
-    private void SetCardsUILayers()
+    private void SetCardsUILayers() // 設置卡片的 UI 層級
     {
         for (var i = 0; i < cards.Count; i++)
         {
@@ -180,7 +182,7 @@ public class CardContainer : MonoBehaviour
     }
 
     // 更新卡片的順序
-    private void UpdateCardOrder()
+    private void UpdateCardOrder()// 更新卡片的順序
     {
         if (!allowCardRepositioning || currentDraggedCard == null) return;
 

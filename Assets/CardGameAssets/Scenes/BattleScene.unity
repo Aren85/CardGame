@@ -883,7 +883,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1261522485}
   - {fileID: 1789025587}
   - {fileID: 1072772711}
   - {fileID: 775963175}
@@ -3205,8 +3204,9 @@ GameObject:
   - component: {fileID: 775963177}
   - component: {fileID: 775963176}
   - component: {fileID: 775963179}
+  - component: {fileID: 775963180}
   m_Layer: 5
-  m_Name: Card_Frame (2)
+  m_Name: CardFrame (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3225,7 +3225,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 193911974}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3282,6 +3282,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9266476bfcf51b948bccb0521709db93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &775963180
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775963174}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 120, y: 180}
+  m_EdgeRadius: 0
 --- !u!1 &787988968
 GameObject:
   m_ObjectHideFlags: 0
@@ -4241,11 +4267,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d695f8b2c00dc45bc1f4fc35407052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldCards: []
-  minPos: {fileID: 0}
-  maxPos: {fileID: 0}
-  cardPositions: []
-  curveTValue: 1
+  forceFitContainer: 0
+  alignment: 1
+  allowCardRepositioning: 1
+  maxCardRotation: 0
+  maxHeightDisplacement: 0
+  zoomConfig:
+    zoomOnHover: 0
+    multiplier: 1
+    overrideYPosition: -1
+    defaultSortOrder: 0
+    bringToFrontOnHover: 0
+    zoomedSortOrder: 0
+    resetRotationOnZoom: 0
+  animationSpeedConfig:
+    rotation: 60
+    position: 500
+    releasePosition: 2000
+    zoom: 0.3
 --- !u!1 &1051676039
 GameObject:
   m_ObjectHideFlags: 0
@@ -4334,8 +4373,9 @@ GameObject:
   - component: {fileID: 1072772713}
   - component: {fileID: 1072772712}
   - component: {fileID: 1072772715}
+  - component: {fileID: 1072772716}
   m_Layer: 5
-  m_Name: Card_Frame (1)
+  m_Name: CardFrame (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4354,7 +4394,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 193911974}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4411,6 +4451,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9266476bfcf51b948bccb0521709db93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1072772716
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072772710}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 120, y: 180}
+  m_EdgeRadius: 0
 --- !u!1 &1242602057
 GameObject:
   m_ObjectHideFlags: 0
@@ -4546,78 +4612,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242602057}
   m_CullTransparentMesh: 1
---- !u!1 &1261522484
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1261522485}
-  - component: {fileID: 1261522486}
-  - component: {fileID: 1261522487}
-  m_Layer: 5
-  m_Name: Deck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1261522485
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1261522484}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 193911974}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.2988333, y: 0.027777772}
-  m_AnchorMax: {x: 0.698, y: 0.27800003}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1261522486
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1261522484}
-  m_CullTransparentMesh: 1
---- !u!114 &1261522487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1261522484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: -100
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 1
-  m_ChildScaleHeight: 1
-  m_ReverseArrangement: 0
 --- !u!1 &1278585949
 GameObject:
   m_ObjectHideFlags: 0
@@ -4860,11 +4854,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d695f8b2c00dc45bc1f4fc35407052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldCards: []
-  minPos: {fileID: 0}
-  maxPos: {fileID: 0}
-  cardPositions: []
-  curveTValue: 1
+  forceFitContainer: 0
+  alignment: 1
+  allowCardRepositioning: 1
+  maxCardRotation: 0
+  maxHeightDisplacement: 0
+  zoomConfig:
+    zoomOnHover: 0
+    multiplier: 1
+    overrideYPosition: -1
+    defaultSortOrder: 0
+    bringToFrontOnHover: 0
+    zoomedSortOrder: 0
+    resetRotationOnZoom: 0
+  animationSpeedConfig:
+    rotation: 60
+    position: 500
+    releasePosition: 2000
+    zoom: 0.3
 --- !u!4 &1318192811
 Transform:
   m_ObjectHideFlags: 0
@@ -5077,6 +5084,7 @@ GameObject:
   - component: {fileID: 1351065672}
   - component: {fileID: 1351065671}
   - component: {fileID: 1351065670}
+  - component: {fileID: 1351065673}
   m_Layer: 5
   m_Name: Card (1)
   m_TagString: Untagged
@@ -5178,6 +5186,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351065668}
   m_CullTransparentMesh: 1
+--- !u!61 &1351065673
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351065668}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 200, y: 300}
+  m_EdgeRadius: 0
 --- !u!1 &1351862030
 GameObject:
   m_ObjectHideFlags: 0
@@ -5575,7 +5609,7 @@ GameObject:
   - component: {fileID: 1440332215}
   - component: {fileID: 1440332218}
   - component: {fileID: 1440332217}
-  - component: {fileID: 1440332220}
+  - component: {fileID: 1440332219}
   m_Layer: 5
   m_Name: HandController
   m_TagString: Untagged
@@ -5646,7 +5680,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440332214}
   m_CullTransparentMesh: 1
---- !u!114 &1440332220
+--- !u!114 &1440332219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5655,47 +5689,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1440332214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5382299738ef9514c9079bf7778b5de0, type: 3}
+  m_Script: {fileID: 11500000, guid: 74d695f8b2c00dc45bc1f4fc35407052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   forceFitContainer: 1
   alignment: 1
   allowCardRepositioning: 1
   maxCardRotation: 15
-  maxHeightDisplacement: 40
+  maxHeightDisplacement: 35
   zoomConfig:
-    zoomOnHover: 1
-    multiplier: 1.3
-    overrideYPosition: 300
+    zoomOnHover: 0
+    multiplier: 1
+    overrideYPosition: -1
     defaultSortOrder: 0
     bringToFrontOnHover: 1
-    zoomedSortOrder: 100
+    zoomedSortOrder: 0
     resetRotationOnZoom: 1
   animationSpeedConfig:
     rotation: 60
     position: 500
     releasePosition: 2000
-    zoom: 5
-  cardPlayConfig:
-    playArea: {fileID: 1789025587}
-    playArea2: {fileID: 1072772711}
-    playArea3: {fileID: 775963175}
-    playArea4: {fileID: 1492307329}
-    playArea5: {fileID: 1985247825}
-    destroyOnPlay: 0
-  eventsConfig:
-    OnCardPlayed:
-      m_PersistentCalls:
-        m_Calls: []
-    OnCardHover:
-      m_PersistentCalls:
-        m_Calls: []
-    OnCardUnhover:
-      m_PersistentCalls:
-        m_Calls: []
-    OnCardDestroy:
-      m_PersistentCalls:
-        m_Calls: []
+    zoom: 0.3
 --- !u!1 &1444807301
 GameObject:
   m_ObjectHideFlags: 0
@@ -5843,8 +5857,9 @@ GameObject:
   - component: {fileID: 1492307331}
   - component: {fileID: 1492307330}
   - component: {fileID: 1492307333}
+  - component: {fileID: 1492307334}
   m_Layer: 5
-  m_Name: Card_Frame (3)
+  m_Name: CardFrame (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5863,7 +5878,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 193911974}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5920,6 +5935,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9266476bfcf51b948bccb0521709db93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1492307334
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492307328}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 120, y: 180}
+  m_EdgeRadius: 0
 --- !u!1 &1558436824
 GameObject:
   m_ObjectHideFlags: 0
@@ -6941,6 +6982,7 @@ GameObject:
   - component: {fileID: 1712447875}
   - component: {fileID: 1712447874}
   - component: {fileID: 1712447873}
+  - component: {fileID: 1712447876}
   m_Layer: 5
   m_Name: Card (3)
   m_TagString: Untagged
@@ -7042,6 +7084,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712447871}
   m_CullTransparentMesh: 1
+--- !u!61 &1712447876
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712447871}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 200, y: 300}
+  m_EdgeRadius: 0
 --- !u!1 &1714314273
 GameObject:
   m_ObjectHideFlags: 0
@@ -7357,6 +7425,7 @@ GameObject:
   - component: {fileID: 1747171877}
   - component: {fileID: 1747171876}
   - component: {fileID: 1747171875}
+  - component: {fileID: 1747171878}
   m_Layer: 5
   m_Name: Card (2)
   m_TagString: Untagged
@@ -7458,6 +7527,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747171873}
   m_CullTransparentMesh: 1
+--- !u!61 &1747171878
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747171873}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 200, y: 300}
+  m_EdgeRadius: 0
 --- !u!1 &1749344483
 GameObject:
   m_ObjectHideFlags: 0
@@ -7470,6 +7565,7 @@ GameObject:
   - component: {fileID: 1749344487}
   - component: {fileID: 1749344486}
   - component: {fileID: 1749344485}
+  - component: {fileID: 1749344488}
   m_Layer: 5
   m_Name: Card (4)
   m_TagString: Untagged
@@ -7571,6 +7667,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749344483}
   m_CullTransparentMesh: 1
+--- !u!61 &1749344488
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749344483}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 200, y: 300}
+  m_EdgeRadius: 0
 --- !u!1 &1752556427
 GameObject:
   m_ObjectHideFlags: 0
@@ -7659,6 +7781,8 @@ GameObject:
   - component: {fileID: 1771073968}
   - component: {fileID: 1771073967}
   - component: {fileID: 8480977033955967741}
+  - component: {fileID: 8480977033955967742}
+  - component: {fileID: 8480977033955967743}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -7742,8 +7866,9 @@ GameObject:
   - component: {fileID: 1789025589}
   - component: {fileID: 1789025588}
   - component: {fileID: 1789025594}
+  - component: {fileID: 1789025595}
   m_Layer: 5
-  m_Name: Card_Frame
+  m_Name: CardFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7762,7 +7887,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 193911974}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7819,6 +7944,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9266476bfcf51b948bccb0521709db93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1789025595
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789025586}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 120, y: 180}
+  m_EdgeRadius: 0
 --- !u!1 &1799247907
 GameObject:
   m_ObjectHideFlags: 0
@@ -8711,8 +8862,9 @@ GameObject:
   - component: {fileID: 1985247827}
   - component: {fileID: 1985247826}
   - component: {fileID: 1985247829}
+  - component: {fileID: 1985247830}
   m_Layer: 5
-  m_Name: Card_Frame (4)
+  m_Name: CardFrame (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8731,7 +8883,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 193911974}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8788,6 +8940,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9266476bfcf51b948bccb0521709db93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1985247830
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985247824}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 120, y: 180}
+  m_EdgeRadius: 0
 --- !u!1 &2026839570
 GameObject:
   m_ObjectHideFlags: 0
@@ -9016,3 +9194,55 @@ MonoBehaviour:
   whatIsDesktop:
     serializedVersion: 2
     m_Bits: 0
+--- !u!61 &8480977033955967742
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771073966}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 200, y: 300}
+  m_EdgeRadius: 0
+--- !u!61 &8480977033955967743
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771073966}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
