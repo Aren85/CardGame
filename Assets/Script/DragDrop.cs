@@ -5,41 +5,39 @@ using UnityEngine.EventSystems;
                                             
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler,IPointerEnterHandler,IPointerExitHandler
 {
-    [SerializeField] private Canvas canvas;//為了計算canvas縮放比例需要取得canvas物件
-    public RectTransform rectTransform;//取得當前物件rectTransform
-    private CanvasGroup canvasGroup;//取得當前物件canvasGroup
-    //public Transform parentToReturnTo = null;//暫時好像沒用到
-    public bool isDeck = false;//用來判定當前卡牌是否處於放置的狀態
+    [SerializeField] private Canvas canvas;
+    public RectTransform rectTransform;
+    private CanvasGroup canvasGroup;
+    public Transform parentToReturnTo = null;
+    public bool isDeck = false;
 
 
     private void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();//取得當前物件rectTransform
-        canvasGroup = GetComponent<CanvasGroup>();//取得當前物件canvasGroup
+        rectTransform = GetComponent<RectTransform>();
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("OnBeginDrag");
 
-        canvasGroup.alpha = 0.6f;//讓卡牌拖曳時透明化
+        canvasGroup.alpha = 0.6f;
         
         
         //parentToReturnTo = this.transform.parent;
         //this.transform.SetParent(this.transform.parent.parent);
 
-        GetComponent<CanvasGroup>().blocksRaycasts = false;//暫時不跟其他物件互相交互
+        GetComponent<CanvasGroup>().blocksRaycasts = false;
 
     }
 
     public void OnDrag(PointerEventData eventData)
     {
 
-        //Debug.Log("OnDrag");
-        Debug.Log(rectTransform.anchoredPosition);
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;//拖曳功能移動計算
-        rectTransform.localScale = Vector3.one * 1.5f;//拖曳時卡牌放大1.5倍
-        
+        Debug.Log("OnDrag");
+        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        rectTransform.localScale = Vector3.one * 1.5f;
 
 
     }
@@ -48,22 +46,22 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         Debug.Log("OnEndDrag");
 
-        canvasGroup.alpha = 1f;//讓卡牌透明度恢復正常
+        canvasGroup.alpha = 1f;
 
         
-        GetComponent<CanvasGroup>().blocksRaycasts = true;//開啟跟其他物件交互功能
+        GetComponent<CanvasGroup>().blocksRaycasts = true;
         if (!isDeck)
         {
-            rectTransform.position = GameObject.Find("HandController").transform.position;//回歸手牌控制物件位置
-            rectTransform.localScale = Vector3.one;//卡牌比例回歸正常
+            rectTransform.position = GameObject.Find("HandController").transform.position;
+            rectTransform.localScale = Vector3.one;
         }
 
     }
 
     public void OnPointerDown(PointerEventData eventData)//點擊
     {
-        isDeck = false;//目前不是放置卡牌狀態
-        transform.SetParent(GameObject.Find("HandController").transform);//點擊瞬間改變父物件為手牌控制物件
+        isDeck = false;
+        transform.SetParent(GameObject.Find("HandController").transform);
         Debug.Log("OnPointerDown");
     }
 
@@ -73,24 +71,24 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         
     }
 
-    public void OnPointerEnter(PointerEventData eventData)//游標移入
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        if(!isDeck)//目前不是放置卡牌狀態
+        if(!isDeck)
         {
             Debug.Log("OnPointerEnter");
-            rectTransform.localScale = Vector3.one * 1.5f;//游標移入放大卡牌
+            rectTransform.localScale = Vector3.one * 1.5f;
         }
         
         //eventData.pointerDrag.GetComponent<RectTransform>().sizeDelta = new Vector2(240, 360);
         
     }
 
-    public void OnPointerExit(PointerEventData eventData)//游標移出
+    public void OnPointerExit(PointerEventData eventData)
     {
-        if (!isDeck)//目前不是放置卡牌狀態
+        if (!isDeck)
         {
             Debug.Log("OnPointerExit");
-            rectTransform.localScale = Vector3.one;//游標離開恢復卡牌大小
+            rectTransform.localScale = Vector3.one;
         }
 
 

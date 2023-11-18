@@ -60,50 +60,50 @@ public class Card : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position = Vector3.Lerp(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, targetPoint, moveSpeed * Time.deltaTime);
 
-        //if(isSelected)
-        //{
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if(isSelected)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        //    RaycastHit hit;
-        //    if(Physics.Raycast(ray, out hit, 100f, whatIsDesktop))
-        //    {
-        //        MoveToPoint(hit.point + new Vector3(0f,2f,0f));
-        //    }
-        //}
+            RaycastHit hit;
+            if(Physics.Raycast(ray, out hit, 100f, whatIsDesktop))
+            {
+                MoveToPoint(hit.point + new Vector3(0f,2f,0f));
+            }
+        }
     }
 
-    //public void MoveToPoint(Vector3 pointToMoveTo)
-    //{
-    //    targetPoint = pointToMoveTo;
-    //}
+    public void MoveToPoint(Vector3 pointToMoveTo)
+    {
+        targetPoint = pointToMoveTo;
+    }
 
-    //private void OnMouseOver()
-    //{
-    //    if(inHand)
-    //    {
-    //        MoveToPoint(handController.cardPositions[handPosttion] + new Vector3(0f, 1f, -5f));
-    //        transform.localScale = new Vector3(1.5f,1.5f,1f);
-    //    }
-    //}
+    private void OnMouseOver()
+    {
+        if(inHand)
+        {
+            MoveToPoint(handController.cardPositions[handPosttion] + new Vector3(0f, 1f, -5f));
+            transform.localScale = new Vector3(1.5f,1.5f,1f);
+        }
+    }
 
-    //private void OnMouseExit()
-    //{
-    //    if(inHand) 
-    //    {
-    //        MoveToPoint(handController.cardPositions[handPosttion]);
-    //        transform.localScale = new Vector3(1f, 1f, 1f);
+    private void OnMouseExit()
+    {
+        if(inHand) 
+        {
+            MoveToPoint(handController.cardPositions[handPosttion]);
+            transform.localScale = new Vector3(1f, 1f, 1f);
 
-    //    }
-    //}
+        }
+    }
 
-    //private void OnMouseDown()
-    //{
-    //    if(inHand)
-    //    {
-    //        isSelected = true;
-    //        thecollider.enabled = false;
-    //    }
-    //}
+    private void OnMouseDown()
+    {
+        if(inHand)
+        {
+            isSelected = true;
+            thecollider.enabled = false;
+        }
+    }
 }
