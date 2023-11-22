@@ -9,6 +9,7 @@ public class Card : MonoBehaviour
     public CardScriptableObject cardSO;
     private HandController handController;
     private Transform card;
+    private RectTransform rectTransform;
 
     public string cardName; //卡牌名稱
     public string cardType; //卡牌類型
@@ -19,7 +20,7 @@ public class Card : MonoBehaviour
     public Image cardGraphicSprite; //卡牌圖案 
 
     private Vector3 targetPoint;
-    public float moveSpeed = 10f;
+    public float moveSpeed = 2f;
     public bool inHand;
     private bool isSelected; //檢測是否已選擇卡牌 
     public int handPosttion;
@@ -29,6 +30,10 @@ public class Card : MonoBehaviour
     private Collider thecollider;
 
     public LayerMask whatIsDesktop;
+    private void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -60,50 +65,51 @@ public class Card : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+        
 
-        if(isSelected)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //if(isSelected)
+        //{
+        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            RaycastHit hit;
-            if(Physics.Raycast(ray, out hit, 100f, whatIsDesktop))
-            {
-                MoveToPoint(hit.point + new Vector3(0f,2f,0f));
-            }
-        }
+        //    RaycastHit hit;
+        //    if(Physics.Raycast(ray, out hit, 100f, whatIsDesktop))
+        //    {
+        //        MoveToPoint(hit.point + new Vector3(0f,2f,0f));
+        //    }
+        //}
     }
 
     public void MoveToPoint(Vector3 pointToMoveTo)
     {
         targetPoint = pointToMoveTo;
+        rectTransform.position = Vector3.Lerp(rectTransform.position, targetPoint, moveSpeed * Time.deltaTime);
     }
 
     private void OnMouseOver()
     {
-        if(inHand)
-        {
-            MoveToPoint(handController.cardPositions[handPosttion] + new Vector3(0f, 1f, -5f));
-            transform.localScale = new Vector3(1.5f,1.5f,1f);
-        }
+        //if(inHand)
+        //{
+        //    MoveToPoint(handController.cardPositions[handPosttion] + new Vector3(0f, 1f, -5f));
+        //    transform.localScale = new Vector3(1.5f,1.5f,1f);
+        //}
     }
 
     private void OnMouseExit()
     {
-        if(inHand) 
-        {
-            MoveToPoint(handController.cardPositions[handPosttion]);
-            transform.localScale = new Vector3(1f, 1f, 1f);
+        //if(inHand) 
+        //{
+        //    MoveToPoint(handController.cardPositions[handPosttion]);
+        //    transform.localScale = new Vector3(1f, 1f, 1f);
 
-        }
+        //}
     }
 
     private void OnMouseDown()
     {
-        if(inHand)
-        {
-            isSelected = true;
-            thecollider.enabled = false;
-        }
+        //if(inHand)
+        //{
+        //    isSelected = true;
+        //    thecollider.enabled = false;
+        //}
     }
 }
