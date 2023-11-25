@@ -11,7 +11,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private CanvasGroup canvasGroup;
     public Transform parentToReturnTo = null;
     public bool isDeck = false;
-
+    
 
     private void Awake()
     {
@@ -30,7 +30,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         //parentToReturnTo = this.transform.parent;
         //this.transform.SetParent(this.transform.parent.parent);
 
-        GetComponent<CanvasGroup>().blocksRaycasts = false;
 
     }
 
@@ -62,9 +61,14 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnPointerDown(PointerEventData eventData)//點擊
     {
+        
         isDeck = false;
-        transform.SetParent(GameObject.Find("HandController").transform);
+        transform.SetParent(GameObject.Find("Canvas").transform);
+
+        GetComponent<CanvasGroup>().blocksRaycasts = false;
         Debug.Log("OnPointerDown");
+        
+
     }
 
     public void OnDrop(PointerEventData eventData)
