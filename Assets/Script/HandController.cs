@@ -7,44 +7,47 @@ public class HandController : MonoBehaviour, IPointerDownHandler
 {
     public static HandController instance;
 
-    public List<Card> heldCards = new List<Card>();
-    private RectTransform rectTransform;
+    public List<CardBase> heldCards = new List<CardBase>();
     public Transform minPos, maxPos;
     public List<Vector3> cardPositions = new List<Vector3>();
 
     public float fanAngle = 60f; // FAN 型的角度
     public float radius = 2f; // 卡牌在 FAN 中的半径
-    public float slerpFactor = 0.5f; // Slerp 插值因子
+    public float slerpFactor = 2f; // Slerp 插值因子
     // Start is called before the first frame update
     private void Awake()
     {
         instance = this;
-        rectTransform = GetComponent<RectTransform>(); //獲取RectTransform組件
+
         CollectCards();
         SetCardPostionsInHand();
     }
     void Start()
     {
         SetCardPostionsInHand();
-        ArrangeCardsInFan();
+        //ArrangeCardsInFan();
 
     }
-    void ArrangeCardsInFan()
+    /*void ArrangeCardsInFan()
     {
         int numberOfCards = heldCards.Count;
+        if (numberOfCards == 1)
+        {
+            // 避免除以零的情况
+            return;
+        }
 
         for (int i = 0; i < numberOfCards; i++)
         {
             // 计算每个卡牌在 FAN 中的角度
             float angle = i * (fanAngle / (numberOfCards - 1)) - (fanAngle / 2f);
 
-            // 将极坐标转换为笛卡尔坐标
-            float x = Mathf.Cos(Mathf.Deg2Rad * angle) * radius;
-            float y = Mathf.Sin(Mathf.Deg2Rad * angle) * radius;
+            // 使用 Mathf.Deg2Rad 将角度转换为弧度
+            angle *= Mathf.Deg2Rad;
 
             // 计算目标旋转
-            Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle);
-
+            Quaternion targetRotation = Quaternion.AngleAxis(Mathf.Rad2Deg * -angle, Vector3.forward);
+            Debug.Log(targetRotation);
             // 确保目标旋转是单位四元数
             if (targetRotation != Quaternion.identity)
             {
@@ -54,7 +57,7 @@ public class HandController : MonoBehaviour, IPointerDownHandler
             // 使用 Slerp 插值旋转
             heldCards[i].transform.localRotation = Quaternion.Slerp(heldCards[i].transform.localRotation, targetRotation, slerpFactor);
         }
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -72,7 +75,7 @@ public class HandController : MonoBehaviour, IPointerDownHandler
 
             if (cardScript != null)
             {
-                heldCards.Add(cardScript);
+                //heldCards.Add(cardScript);
             }
         }
 
@@ -98,20 +101,19 @@ public class HandController : MonoBehaviour, IPointerDownHandler
 
             heldCards[i].MoveToPoint(cardPositions[i]);//卡牌移動到對應位置
             heldCards[i].inHand = true;
-            heldCards[i].handPosttion = i;
+            heldCards[i].handPosition = i;
         }
-        ArrangeCardsInFan();
     }
 
     public void AddCardToHand(Card cardToAdd)
     {
-        heldCards.Add(cardToAdd);
+        //heldCards.Add(cardToAdd);
         SetCardPostionsInHand();
     }
 
     public void RemoveCardToHand(Card cardToAdd)
     {
-        heldCards.Remove(cardToAdd);
+        //heldCards.Remove(cardToAdd);
         SetCardPostionsInHand();
     }
     public void OnPointerDown(PointerEventData eventData)

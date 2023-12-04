@@ -60,8 +60,8 @@ public class Card : MonoBehaviour
         cardTypeText.text = cardType;
         cardRankText.text = cardRank;
         cardDescirptionText.text = cardDescription;
-        cardSuitSprite.sprite = cardSO.GetCardSuitSprite();
-        cardGraphicSprite.sprite = cardSO.cardImage;
+        //cardSuitSprite.sprite = cardSO.GetCardSuitSprite();
+        //cardGraphicSprite.sprite = cardSO.cardImage;
     }
 
 
@@ -69,10 +69,10 @@ public class Card : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isSelected)
+        if (!isSelected)
         {
             rectTransform.position = Vector3.Slerp(rectTransform.position, targetPoint, moveSpeed * Time.deltaTime);
-            rectTransform.rotation = Quaternion.RotateTowards(rectTransform.rotation, targetRot, rotateSpeed * Time.deltaTime);
+            //rectTransform.rotation = Quaternion.RotateTowards(rectTransform.rotation, targetRot, rotateSpeed * Time.deltaTime);
         }
 
         //if (isSelected)

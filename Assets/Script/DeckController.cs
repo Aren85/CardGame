@@ -64,7 +64,7 @@ public class DeckController : MonoBehaviour
         }
 
         // 實例化新卡牌，將其設置在手牌控制器的位置
-        Card newCard = Instantiate(cardToSpawn, handController.transform);
+        Card newCard = Instantiate(cardToSpawn, this.transform);
 
         // 將新卡牌的卡牌腳本對象設置為活動卡牌列表的第一張卡牌
         newCard.cardSO = activeCards[0];

@@ -28,14 +28,20 @@ public class CardScriptableObject : ScriptableObject
     [Header("卡牌類型設定")]
     public CardType cardType;
 
+    public Sprite AttackSprite;
+    public Sprite SkillSprite;
+    public Sprite AbilitySprite;
+    [Header("卡牌效果設定")]
+    public List<CardEffect> effects; // 卡牌效果列表
+
 
 
 
     public enum CardType
     {
-        攻擊,
-        技能,
-        能力,
+        Attack,//攻擊
+        Skill,//技能
+        Ability,//能力
     }
     public enum CardSuit
     {
@@ -76,6 +82,20 @@ public class CardScriptableObject : ScriptableObject
                 return spadesSprite;
             default:
                 return null; // 如果没有匹配的花色，返回空
+        }
+    }
+    public Sprite GetCardTypeSprite()
+    {
+        switch(cardType)
+        {
+            case CardType.Attack:
+                return AttackSprite;
+            case CardType.Skill:
+                return SkillSprite;
+            case CardType.Ability:
+                return AbilitySprite;
+            default:
+                return null;
         }
     }
     public string GetCardRank()

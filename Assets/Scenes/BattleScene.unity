@@ -870,7 +870,7 @@ RectTransform:
   m_GameObject: {fileID: 275298466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 108, y: 108, z: 108}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 966035395}
@@ -1151,7 +1151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &354710466
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1259,7 +1259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &622996605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2692,7 +2692,7 @@ MonoBehaviour:
   cardPositions: []
   fanAngle: 60
   radius: 2
-  slerpFactor: 0.5
+  slerpFactor: 2
 --- !u!114 &1440332217
 MonoBehaviour:
   m_ObjectHideFlags: 0
