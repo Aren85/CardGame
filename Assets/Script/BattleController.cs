@@ -1,0 +1,69 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BattleController : MonoBehaviour
+{
+    public static BattleController instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    public enum TurnOrder
+    {
+        playerActive,
+        playerCardAttacks,
+        enemyActive,
+        enemyCardAttacks
+    } 
+    public TurnOrder currentPhase;
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            AdvanceTurn();
+        }
+    }
+    public void AdvanceTurn()
+    {
+        currentPhase++;
+        if((int)currentPhase >= System.Enum.GetValues(typeof(TurnOrder)).Length)
+        {
+            currentPhase = 0;
+        }
+        
+        switch(currentPhase)
+        {
+            case TurnOrder.playerActive:
+                break;
+
+            case TurnOrder.playerCardAttacks:
+
+                Debug.Log("skipping player card attacks");
+                //AdvanceTurn();
+
+                break; 
+
+            case TurnOrder.enemyActive:
+                Debug.Log("skipping enemy actions");
+                AdvanceTurn();
+                break;
+
+            case TurnOrder.enemyCardAttacks:
+                Debug.Log("skipping enemy card attacks");
+                AdvanceTurn();
+                break;
+        }
+    }
+
+    public void EndPlayerTurn()
+    {
+        AdvanceTurn();
+    }
+}

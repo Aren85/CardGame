@@ -8,7 +8,7 @@ public class DeckController : MonoBehaviour
     public static DeckController instance;
     public List<CardScriptableObject> deckToUse = new List<CardScriptableObject>();
     private List<CardScriptableObject> activeCards = new List<CardScriptableObject>();
-    public Card cardToSpawn;
+    public CardBase cardToSpawn;
     private HandController handController;
     private void Awake()
     {
@@ -64,13 +64,13 @@ public class DeckController : MonoBehaviour
         }
 
         // 實例化新卡牌，將其設置在手牌控制器的位置
-        Card newCard = Instantiate(cardToSpawn, this.transform);
+        CardBase newCard = Instantiate(cardToSpawn, this.transform);
 
         // 將新卡牌的卡牌腳本對象設置為活動卡牌列表的第一張卡牌
         newCard.cardSO = activeCards[0];
 
         // 設置新卡牌的屬性
-        newCard.SetupCard();
+        newCard. SetupCard();
 
         // 從活動卡牌列表中移除第一張卡牌
         activeCards.RemoveAt(0);

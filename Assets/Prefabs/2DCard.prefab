@@ -119,8 +119,8 @@ Transform:
   m_GameObject: {fileID: 2053665662529042798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2053665663495689500}
   - {fileID: 2053665663318946315}
@@ -200,7 +200,16 @@ MonoBehaviour:
   cardNameText: {fileID: 2053665663189498084}
   descirptionText: {fileID: 2053665662805762581}
   cardRankText: {fileID: 2053665662971843286}
-  moveSpeed: 2
+  moveSpeed: 5
+  inHand: 0
+  handPosition: 0
+  whatIsDesktop:
+    serializedVersion: 2
+    m_Bits: 1024
+  whatIsPlacement:
+    serializedVersion: 2
+    m_Bits: 2048
+  assignedPlace: {fileID: 0}
   effects: []
 --- !u!61 &5135426307700104946
 BoxCollider2D:
