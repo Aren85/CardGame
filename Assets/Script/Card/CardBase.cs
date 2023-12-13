@@ -129,7 +129,7 @@ public class CardBase : MonoBehaviour
     {
         if(inHand)
         {
-            MoveToPoint(handController.cardPositions[handPosition] + new Vector3(0f, 1f ,20f));
+            MoveToPoint(handController.cardPositions[handPosition] + new Vector3(0f, 1f ,-10f));
         }
     }
     private void OnMouseExit()
