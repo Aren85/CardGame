@@ -20,6 +20,10 @@ MonoBehaviour:
   diamondsSprite: {fileID: -1038677591, guid: 2c0c20a1746f90a4f8470c8b328dd8ce, type: 3}
   clubsSprite: {fileID: 1247790201, guid: 2c0c20a1746f90a4f8470c8b328dd8ce, type: 3}
   spadesSprite: {fileID: 1094769837, guid: 2c0c20a1746f90a4f8470c8b328dd8ce, type: 3}
+  heartsSpriteFrame: {fileID: 21300000, guid: 86c1171c99ec2494a97fa43c4fec27b1, type: 3}
+  diamondsSpriteFrame: {fileID: 21300000, guid: 14c1409e7c30de840be61b87beff2730, type: 3}
+  clubsSpriteFrame: {fileID: 21300000, guid: 3d842bf221d4ab6439d26d6792da90e2, type: 3}
+  spadesSpriteFrame: {fileID: 21300000, guid: 813943ae21dbe9d4b8cba004e0abc351, type: 3}
   cardRank: 3
   cardType: 1
   AttackSprite: {fileID: 21300000, guid: 6c65eaa2e1437cc4aa405c2a9429a2c3, type: 3}

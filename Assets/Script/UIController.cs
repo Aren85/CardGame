@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
+    public static UIController instance;
+    public GameObject endTurnButton;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         
@@ -18,6 +24,6 @@ public class UIController : MonoBehaviour
 
     public void EndPlayerTurn()
     {
-
+        BattleController.instance.EndPlayerTurn();
     }
 }

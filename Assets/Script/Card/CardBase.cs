@@ -11,11 +11,13 @@ using Unity.Burst.CompilerServices;
 public class CardBase : MonoBehaviour
 {
     public CardScriptableObject cardSO;
+    public GameObject cardNameGameObject;
     public string cardName;
     public string description;
 
     public SpriteRenderer cardType;
     public Image cardSuit;
+    public Image cardSuitFrame;
     public Image cardGraphic;
     
     public TMP_Text cardNameText;
@@ -52,6 +54,7 @@ public class CardBase : MonoBehaviour
     private void Start()
     {
         SetupCard();
+        cardNameGameObject.SetActive(false);
     }
     private void Update()
     {
@@ -119,6 +122,7 @@ public class CardBase : MonoBehaviour
 
         cardType.sprite = cardSO.GetCardTypeSprite();
         cardSuit.sprite = cardSO.GetCardSuitSprite();
+        cardSuitFrame.sprite = cardSO.GetCardSuitSpriteFrame();
         cardGraphic.sprite = cardSO.cardImage;
     }
     public void MoveToPoint(Vector3 pointToMoveTo)
@@ -130,6 +134,8 @@ public class CardBase : MonoBehaviour
         if(inHand)
         {
             MoveToPoint(handController.cardPositions[handPosition] + new Vector3(0f, 1f ,-10f));
+            transform.localScale = Vector3.one;
+            cardNameGameObject.SetActive(true);
         }
     }
     private void OnMouseExit()
@@ -137,6 +143,8 @@ public class CardBase : MonoBehaviour
         if(inHand)
         {
             MoveToPoint(handController.cardPositions[handPosition]);
+            transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+            cardNameGameObject.SetActive(false);
         }
     }
 

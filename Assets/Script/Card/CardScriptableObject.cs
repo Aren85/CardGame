@@ -22,6 +22,12 @@ public class CardScriptableObject : ScriptableObject
     public Sprite diamondsSprite;
     public Sprite clubsSprite;
     public Sprite spadesSprite;
+    
+    [Header("花色邊框設定")]
+    public Sprite heartsSpriteFrame;
+    public Sprite diamondsSpriteFrame;
+    public Sprite clubsSpriteFrame;
+    public Sprite spadesSpriteFrame;
 
     [Header("卡牌點數設定")]
     public CardRank cardRank; // 使用CardValue枚舉来存储点数
@@ -80,6 +86,22 @@ public class CardScriptableObject : ScriptableObject
                 return clubsSprite;
             case CardSuit.Spades:
                 return spadesSprite;
+            default:
+                return null; // 如果没有匹配的花色，返回空
+        }
+    }
+    public Sprite GetCardSuitSpriteFrame()
+    {
+        switch (cardSuit)
+        {
+            case CardSuit.Hearts:
+                return heartsSpriteFrame;
+            case CardSuit.Diamonds:
+                return diamondsSpriteFrame;
+            case CardSuit.Clubs:
+                return clubsSpriteFrame;
+            case CardSuit.Spades:
+                return spadesSpriteFrame;
             default:
                 return null; // 如果没有匹配的花色，返回空
         }

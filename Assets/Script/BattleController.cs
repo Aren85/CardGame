@@ -9,6 +9,8 @@ public class BattleController : MonoBehaviour
     {
         instance = this;
     }
+    public int startingCardAmount = 5;
+    public int cardsToDrawPlayerTurn = 3;
     public enum TurnOrder
     {
         playerActive,
@@ -20,7 +22,7 @@ public class BattleController : MonoBehaviour
 
     void Start()
     {
-        
+        DeckController.instance.DrawMultipleCards(startingCardAmount);
     }
 
     void Update()
@@ -41,12 +43,15 @@ public class BattleController : MonoBehaviour
         switch(currentPhase)
         {
             case TurnOrder.playerActive:
+                UIController.instance.endTurnButton.SetActive(true);
+
+                DeckController.instance.DrawMultipleCards(cardsToDrawPlayerTurn);
                 break;
 
             case TurnOrder.playerCardAttacks:
 
                 Debug.Log("skipping player card attacks");
-                //AdvanceTurn();
+                AdvanceTurn();
 
                 break; 
 
@@ -64,6 +69,7 @@ public class BattleController : MonoBehaviour
 
     public void EndPlayerTurn()
     {
+        UIController.instance.endTurnButton.SetActive(false);
         AdvanceTurn();
     }
 }

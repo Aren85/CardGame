@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ public class DeckController : MonoBehaviour
     private List<CardScriptableObject> activeCards = new List<CardScriptableObject>();
     public CardBase cardToSpawn;
     private HandController handController;
+
+    public float waitBetweenDrawingCards = 0.25f;
     private void Awake()
     {
         instance = this;
@@ -77,5 +80,19 @@ public class DeckController : MonoBehaviour
 
         // 將新卡牌添加到手牌控制器的手牌中
         HandController.instance.AddCardToHand(newCard);
+    }
+    public void DrawMultipleCards(int amountToDraw)
+    {
+        StartCoroutine(DramMultipleCo(amountToDraw)); 
+    }
+
+    IEnumerator DramMultipleCo(int amountToDraw)
+    {
+        for (int i = 0; i < amountToDraw; i++)
+        {
+            DrawCardToHand();
+
+            yield return new WaitForSeconds(waitBetweenDrawingCards);
+        }
     }
 }
