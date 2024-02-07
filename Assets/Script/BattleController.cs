@@ -50,8 +50,9 @@ public class BattleController : MonoBehaviour
 
             case TurnOrder.playerCardAttacks:
 
-                Debug.Log("skipping player card attacks");
-                AdvanceTurn();
+                //Debug.Log("skipping player card attacks");
+                //AdvanceTurn();
+                CardPointsController.instance.PlayerAttack();
 
                 break; 
 

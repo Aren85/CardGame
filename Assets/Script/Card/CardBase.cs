@@ -42,7 +42,7 @@ public class CardBase : MonoBehaviour
 
     public List<CardEffect> effects;
 
-
+    public int currentHealth = 10;
 
     private void Awake()
     {
@@ -164,6 +164,16 @@ public class CardBase : MonoBehaviour
         isSelected = false;
         theCollider2D.enabled = true;
         MoveToPoint(handController.cardPositions[handPosition]);
+    }
+    public void DamageCard(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+        if(currentHealth <= 0)
+        {
+            currentHealth = 0;
+            assignedPlace.activeCard = null;
+            Destroy(gameObject);
+        }
     }
 }
 
